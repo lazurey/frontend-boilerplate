@@ -1,0 +1,25 @@
+
+.main {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid #e6e6e6;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.email {
+  display: block;
+  font-size: 1.2em;
+}
+
+.button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 15px;
+  line-height: 2em;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}

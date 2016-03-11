@@ -1,5 +1,5 @@
 
-# Frontend Boilerplate
+# Rogue
 
 A boilerplate of things that mostly shouldn't exist.
 
@@ -17,6 +17,16 @@ A boilerplate of things that mostly shouldn't exist.
 - [x] [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
 - [ ] Redux effects
 - [x] TodoMVC example
+
+## Tool Versions
+
+```
+$ node -v
+v5.8.0
+$ npm -v
+3.7.3
+$ npm install webpack -g
+```
 
 ## Setup
 

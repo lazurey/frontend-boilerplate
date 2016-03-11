@@ -3,17 +3,19 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Header from '../../components/Header'
-import MainSection from '../../components/MainSection'
-import * as TodoActions from '../../actions/todos'
+import Main from '../../components/Main'
+import Footer from '../../components/Footer'
+import * as LoginActions from '../../actions/login'
 import style from './style.css'
 
-class App extends Component {
+class Login extends Component {
   render() {
-    const { todos, actions, children } = this.props
+    const { email, login, actions, children } = this.props
     return (
       <div className={style.normal}>
-        <Header addTodo={actions.addTodo} />
-        <MainSection todos={todos} actions={actions} />
+        <Header />
+        <Main email={email} login={login} actions={actions} />
+        <Footer />
         {children}
       </div>
     )
@@ -22,17 +24,17 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    todos: state.todos
+    email: state.email,
+    login: state.login
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(TodoActions, dispatch)
+    actions: bindActionCreators(LoginActions, dispatch)
   }
 }
 
 export default connect(
-  mapStateToProps,
   mapDispatchToProps
-)(App)
+)(Login)
