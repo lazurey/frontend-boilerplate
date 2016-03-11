@@ -23,6 +23,10 @@
 }
 
 
+.normal p {
+  margin: 0;
+}
+
 @media (max-width: 430px) {
   .normal {
     height: 50px;

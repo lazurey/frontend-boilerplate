@@ -14,7 +14,7 @@ class Main extends Component {
       <section className={style.main}>
         <div className={style.email}>
           <input value={email} placeholder='Your email address' />
-          <span>@thoughtworks.com</span>
+          <span className={style.suffix}>@thoughtworks.com</span>
         </div>
         <button className={style.button}>下一步</button>
       </section>

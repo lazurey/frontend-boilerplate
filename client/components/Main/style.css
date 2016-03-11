@@ -12,12 +12,45 @@
   font-size: 1.2em;
 }
 
+.email input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 10px;
+  text-align: right;
+  font-size: 1.2em;
+}
+
+.email input:focus {
+  outline: none;
+}
+
+.suffix {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .button {
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   padding: 0 15px;
   line-height: 2em;
-  margin: 5px 0;
+  margin: 20px 0;
   cursor: pointer;
+  height: 40px;
+  line-height: 40px;
 }
 
 .button:hover {

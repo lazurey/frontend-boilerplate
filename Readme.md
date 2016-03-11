@@ -40,6 +40,8 @@ $ npm install
 $ npm start
 ```
 
+Project is running at port 3000
+
 ## Build
 
 ```
