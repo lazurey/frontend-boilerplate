@@ -30,6 +30,14 @@ $ npm install webpack -g
 
 ## Setup
 
+
+**请执行一次这个脚本**
+
+```
+chmod a+x script/register_git_test_hook.sh
+./script/register_git_test_hook.sh
+```
+
 ```
 $ npm install
 ```
