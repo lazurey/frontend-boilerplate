@@ -10,11 +10,11 @@ import style from './style.css'
 
 class Login extends Component {
   render() {
-    const { email, login, actions, children } = this.props
+    const { user, actions, children } = this.props
     return (
       <div className={style.normal}>
         <Header />
-        <Main email={email} login={login} actions={actions} />
+        <Main user={user} actions={actions} />
         <Footer />
         {children}
       </div>
@@ -23,9 +23,10 @@ class Login extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log('Login container')
+  console.log(state)
   return {
-    email: state.email,
-    login: state.login
+    user: state.login
   }
 }
 
@@ -36,5 +37,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
+  mapStateToProps,
   mapDispatchToProps
 )(Login)

@@ -1,0 +1,9 @@
+[
+  {
+    "id": 0,
+    "email": "test@thoughtworks.com",
+    "emailid": "test",
+    "name": "测试用户",
+    "token": "token_aaa1"
+  }
+]

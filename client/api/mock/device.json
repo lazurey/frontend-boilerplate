@@ -1,0 +1,16 @@
+[
+  {
+    "id": "17001150",
+    "brand": "Apple",
+    "model": "MacBook Air 13'",
+    "owner": "test@thoughtworks.com",
+    "transfer_date": "2016/01/01 00:00:00"
+  }, 
+  {
+    "id": "17001151",
+    "brand": "Apple",
+    "model": "MacBook Pro 15'",
+    "owner": "test@thoughtworks.com",
+    "transfer_date": "2016/01/01 00:00:00"
+  }
+]

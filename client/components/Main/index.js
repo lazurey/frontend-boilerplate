@@ -8,15 +8,26 @@ class Main extends Component {
     super(props, context)
   }
 
+  _login() {
+    const { actions } = this.props
+    console.log('_login')
+    actions.login('xxx@thoughtworks.com')
+  }
+
   render() {
-    const { email, login, actions } = this.props
+    const { user } = this.props
     return (
       <section className={style.main}>
         <div className={style.email}>
-          <input value={email} placeholder='Your email address' />
+          <input type='text' name='email' placeholder='Your email address' />
           <span className={style.suffix}>@thoughtworks.com</span>
         </div>
-        <button className={style.button}>下一步</button>
+        <button onClick={::this._login} className={style.button}>下一步</button>
+        <div>
+          测试信息
+          <p>{user.email}</p>
+          <p>{user.token}</p>
+        </div>
       </section>
     )
   }
