@@ -1,13 +1,10 @@
 let server
 let token = 'initial'
 
-/* istanbul ignore if */
 if (global.location &&
-  /* istanbul ignore next */
   global.location.origin) {
   server = global.location.origin
 } else if (process.env.NODE_ENV === 'development') {
-  /* istanbul ignore next */
   server = ''
 } else {
   server = 'http://0.0.0.0:3000'

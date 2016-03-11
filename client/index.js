@@ -11,6 +11,11 @@ import configure from './store'
 const store = configure()
 const history = syncHistoryWithStore(browserHistory, store)
 
+
+if (process.env.NODE_ENV !== 'production') {
+  require('./api/mock')
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>

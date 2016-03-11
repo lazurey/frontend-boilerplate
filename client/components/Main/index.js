@@ -34,12 +34,9 @@ class Main extends Component {
           <input type="text" onChange={::this._handleChange} value={this.state.email} placeholder="Your email address" />
           <span className={style.suffix}>{TW_EMAIL}</span>
         </div>
-        <button onClick={::this._login} className={style.button}>下一步</button>
-        <div>
-          测试信息
-          <p>{user.email}</p>
-          <p>{user.token}</p>
-        </div>
+        <button onClick={::this._login} className={style.button}>邮件验证</button>
+        {user.email}
+        {user.token}
       </section>
     )
   }
