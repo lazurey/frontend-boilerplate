@@ -1,17 +1,29 @@
 
-import React, { Component } from 'react'
-import classnames from 'classnames'
+import React, { Component, PropTypes } from 'react'
 import style from './style.css'
 
+const TW_EMAIL = '@thoughtworks.com'
+
 class Main extends Component {
+  static propTypes = {
+    actions: PropTypes.object,
+    user: PropTypes.object
+  }
+
   constructor(props, context) {
     super(props, context)
+    this.state = {
+      email: ''
+    }
+  }
+
+  _handleChange(e) {
+    this.setState({ email: e.target.value })
   }
 
   _login() {
     const { actions } = this.props
-    console.log('_login')
-    actions.login('xxx@thoughtworks.com')
+    actions.login(this.state.email + TW_EMAIL)
   }
 
   render() {
@@ -19,8 +31,8 @@ class Main extends Component {
     return (
       <section className={style.main}>
         <div className={style.email}>
-          <input type='text' name='email' placeholder='Your email address' />
-          <span className={style.suffix}>@thoughtworks.com</span>
+          <input type="text" onChange={::this._handleChange} value={this.state.email} placeholder="Your email address" />
+          <span className={style.suffix}>{TW_EMAIL}</span>
         </div>
         <button onClick={::this._login} className={style.button}>下一步</button>
         <div>

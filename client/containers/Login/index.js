@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Header from '../../components/Header'
@@ -9,6 +9,12 @@ import * as LoginActions from '../../actions/login'
 import style from './style.css'
 
 class Login extends Component {
+  static propTypes = {
+    user: PropTypes.object,
+    actions: PropTypes.object,
+    children: PropTypes.object
+  }
+
   render() {
     const { user, actions, children } = this.props
     return (
@@ -23,8 +29,6 @@ class Login extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log('Login container')
-  console.log(state)
   return {
     user: state.login
   }
