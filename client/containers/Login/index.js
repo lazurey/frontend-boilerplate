@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Header from '../../components/Header'
-import Main from '../../components/Main'
+import LoginForm from '../../components/LoginForm'
 import Footer from '../../components/Footer'
 import * as LoginActions from '../../actions/login'
 import style from './style.css'
@@ -20,7 +20,7 @@ class Login extends Component {
     return (
       <div className={style.normal}>
         <Header />
-        <Main user={user} actions={actions} />
+        <LoginForm user={user} actions={actions} />
         <Footer />
         {children}
       </div>

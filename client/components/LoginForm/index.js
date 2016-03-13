@@ -4,7 +4,7 @@ import style from './style.css'
 
 const TW_EMAIL = '@thoughtworks.com'
 
-class Main extends Component {
+class LoginForm extends Component {
   static propTypes = {
     actions: PropTypes.object,
     user: PropTypes.object
@@ -31,15 +31,18 @@ class Main extends Component {
     return (
       <section className={style.main}>
         <div className={style.email}>
-          <input type="text" onChange={::this._handleChange} value={this.state.email} placeholder="Your email address" />
+          <input
+            type="text"
+            onChange={::this._handleChange}
+            value={this.state.email}
+            placeholder="Your email address"
+          />
           <span className={style.suffix}>{TW_EMAIL}</span>
         </div>
         <button onClick={::this._login} className={style.button}>邮件验证</button>
-        {user.email}
-        {user.token}
       </section>
     )
   }
 }
 
-export default Main
+export default LoginForm
