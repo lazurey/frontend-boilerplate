@@ -27,7 +27,6 @@ class LoginForm extends Component {
   }
 
   render() {
-    const { user } = this.props
     return (
       <section className={style.main}>
         <div className={style.email}>

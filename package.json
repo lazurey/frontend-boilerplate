@@ -8,8 +8,8 @@
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "build": "NODE_ENV=production webpack --progress --colors",
     "mocha": "NODE_ENV=test mocha --compilers js:babel-register --require ignore-styles -r should -r isomorphic-fetch -R spec client/**/__test__/*.spec.js",
-    "istanbul": "NODE_ENV=test babel-node node_modules/istanbul/lib/cli cover --dir dist _mocha -- --compilers js:babel-register --require ignore-styles -r should -r isomorphic-fetch -R dot client/**/*.spec.js",
-    "test": "NODE_ENV=test eslint ./ && npm run istanbul"
+    "istanbul": "NODE_ENV=test babel-node node_modules/istanbul/lib/cli cover --dir dist _mocha -- --compilers js:babel-register --require ignore-styles -r should -r isomorphic-fetch -R spec client/**/*.spec.js",
+    "test": "NODE_ENV=test eslint ./ && npm run mocha"
   },
   "license": "MIT",
   "devDependencies": {
