@@ -1,5 +1,5 @@
 let server
-let token = 'initial'
+// const token = 'initial'
 
 /* istanbul ignore if */
 if (global.location &&
@@ -26,7 +26,7 @@ export const apiServer = `${server}/api`
 
 /* istanbul ignore next */
 export const postJson = (url, data = {}) => {
-  let postData = {
+  const postData = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ export const postJson = (url, data = {}) => {
 
 /* istanbul ignore next */
 export const putJson = (url, data = {}) => {
-  let postData = {
+  const postData = {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ export const putJson = (url, data = {}) => {
 
 /* istanbul ignore next */
 export const getJson = (url) => {
-  let postData = {
+  const postData = {
     method: 'GET'
   }
   // if (token && isNeedAuth.test(url)) {
@@ -91,10 +91,10 @@ const fetchJson = response => {
 }
 
 /* istanbul ignore next */
-const prepareHeader = () => ({
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    Authorization: ['Bearer ', token].join('')
-  }
-})
+// const prepareHeader = () => ({
+//   headers: {
+//     Accept: 'application/json',
+//     'Content-Type': 'application/json',
+//     Authorization: ['Bearer ', token].join('')
+//   }
+// })
