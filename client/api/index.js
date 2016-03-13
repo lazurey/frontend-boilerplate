@@ -1,10 +1,13 @@
 let server
 let token = 'initial'
 
+/* istanbul ignore if */
 if (global.location &&
+  /* istanbul ignore next */
   global.location.origin) {
   server = global.location.origin
 } else if (process.env.NODE_ENV === 'development') {
+  /* istanbul ignore next */
   server = ''
 } else {
   server = 'http://0.0.0.0:3000'
@@ -12,12 +15,6 @@ if (global.location &&
 
 export const serverAddress = server
 export const apiServer = `${server}/api`
-export const saveToken = (newToken) => {
-  token = newToken
-}
-
-export const PAGER_LIMIT = 10
-export const getPager = (offset = 0, limit = PAGER_LIMIT) => `?from=${offset}&limit=${limit}`
 
 /*
   ensure
@@ -25,8 +22,9 @@ export const getPager = (offset = 0, limit = PAGER_LIMIT) => `?from=${offset}&li
   /api/admin/*
   have the auth header
 */
-const isNeedAuth = /api\/((me)|(admin)|(sms))/i
+// const isNeedAuth = /api\/((me)|(admin)|(sms))/i
 
+/* istanbul ignore next */
 export const postJson = (url, data = {}) => {
   let postData = {
     method: 'POST',
@@ -34,9 +32,9 @@ export const postJson = (url, data = {}) => {
       'Content-Type': 'application/json'
     }
   }
-  if (token && isNeedAuth.test(url)) {
-    postData = Object.assign(postData, prepareHeader())
-  }
+  // if (token && isNeedAuth.test(url)) {
+  //   postData = Object.assign(postData, prepareHeader())
+  // }
   return fetch(url, Object.assign(postData, {
     body: JSON.stringify(data)
   }))
@@ -44,6 +42,7 @@ export const postJson = (url, data = {}) => {
   .then(fetchJson)
 }
 
+/* istanbul ignore next */
 export const putJson = (url, data = {}) => {
   let postData = {
     method: 'PUT',
@@ -51,9 +50,9 @@ export const putJson = (url, data = {}) => {
       'Content-Type': 'application/json'
     }
   }
-  if (token && isNeedAuth.test(url)) {
-    postData = Object.assign(postData, prepareHeader())
-  }
+  // if (token && isNeedAuth.test(url)) {
+  //   postData = Object.assign(postData, prepareHeader())
+  // }
   return fetch(url, Object.assign(postData, {
     body: JSON.stringify(data)
   }))
@@ -61,18 +60,20 @@ export const putJson = (url, data = {}) => {
   .then(fetchJson)
 }
 
+/* istanbul ignore next */
 export const getJson = (url) => {
   let postData = {
     method: 'GET'
   }
-  if (token && isNeedAuth.test(url)) {
-    postData = Object.assign(postData, prepareHeader())
-  }
+  // if (token && isNeedAuth.test(url)) {
+  //   postData = Object.assign(postData, prepareHeader())
+  // }
   return fetch(url, postData)
     .then(checkStatus)
     .then(fetchJson)
 }
 
+/* istanbul ignore next */
 const checkStatus = response => {
   if (response.status >= 200 && response.status < 400) {
     return response
@@ -80,6 +81,7 @@ const checkStatus = response => {
   throw response
 }
 
+/* istanbul ignore next */
 const fetchJson = response => {
   try {
     return response.json()
@@ -88,6 +90,7 @@ const fetchJson = response => {
   }
 }
 
+/* istanbul ignore next */
 const prepareHeader = () => ({
   headers: {
     Accept: 'application/json',
