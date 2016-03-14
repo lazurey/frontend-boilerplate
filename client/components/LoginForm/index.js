@@ -2,8 +2,6 @@
 import React, { Component, PropTypes } from 'react'
 import style from './style.css'
 
-const TW_EMAIL = '@thoughtworks.com'
-
 class LoginForm extends Component {
   static propTypes = {
     actions: PropTypes.object,
@@ -23,7 +21,7 @@ class LoginForm extends Component {
 
   _login() {
     const { actions } = this.props
-    actions.login(this.state.email + TW_EMAIL)
+    actions.login(this.state.email)
   }
 
   render() {
@@ -34,11 +32,11 @@ class LoginForm extends Component {
             type="text"
             onChange={::this._handleChange}
             value={this.state.email}
-            placeholder="Your email address"
+            placeholder="Your github account"
           />
-          <span className={style.suffix}>{TW_EMAIL}</span>
+          <span className={style.suffix}>@github.com</span>
         </div>
-        <button onClick={::this._login} className={style.button}>邮件验证</button>
+        <button onClick={::this._login} className={style.button}>Verify</button>
       </section>
     )
   }

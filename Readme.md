@@ -3,7 +3,13 @@
 
 The project is set up based on [tj](https://github.com/tj)'s [frontend-boilerplate](https://github.com/tj/frontend-boilerplate), please refer to the original repository for detailed tech stacks.
 
-## 先决条件
+Added packages:
+
+- [x] [Mocha](https://mochajs.org/)
+- [x] [Istanbul](https://github.com/gotwarlost/istanbul)
+- API call example
+
+## Prerequisite
 
 ```
 $ node -v
@@ -15,20 +21,20 @@ $ npm install webpack -g
 
 ## Setup
 
-**请执行一次这个脚本**
+**Execute this script once**
 
 ```
 chmod a+x script/register_git_test_hook.sh
 ./script/register_git_test_hook.sh
 ```
 
-**然后**
+**Then**
 
 ```
 $ npm install
 ```
 
-## 运行
+## How to run the project
 
 ```
 $ npm start
@@ -36,7 +42,7 @@ $ npm start
 
 Project is running at port 3000
 
-## 构建出静态文件
+## How to build the project
 
 ```
 $ npm run build
